@@ -1,0 +1,54 @@
+<main class="main">
+  <section id="home" class="hero">
+    <h1 
+      class="hero-title"
+      [@fadeInUp]="animationState"
+    >
+      Innovations in Clean Energy
+    </h1>
+    <p 
+      class="hero-subtitle"
+      [@fadeInDown]="animationState"
+    >
+      Exploring the cutting-edge technologies shaping the future of Clean Energy
+    </p>
+    <button 
+      (click)="navigateToLogin()" 
+      class="login-button"
+    >
+      Login <i class="fas fa-arrow-right icon"></i>
+    </button>
+    <div class="hero-image-container">
+    <div class="flex icons" style="margin: 40px !important;"
+         [@hoverScale]="hoverState"
+         (mouseenter)="onMouseEnter()"
+         (mouseleave)="onMouseLeave()">
+      <i class="fas fa-wind icon"></i>
+      <span>Wind Energy</span>
+    </div>
+    <div class="flex icons" style="margin: 40px !important;"
+         [@hoverScale]="hoverState"
+         (mouseenter)="onMouseEnter()"
+         (mouseleave)="onMouseLeave()">
+      <i class="fas fa-sun icon"></i>
+      <span>Solar Power</span>
+    </div>
+    <div class="flex icons" style="margin: 40px !important;"
+         [@hoverScale]="hoverState"
+         (mouseenter)="onMouseEnter()"
+         (mouseleave)="onMouseLeave()">
+      <i class="fas fa-bolt icon"></i>
+      <span>Energy Storage</span>
+    </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="about-title">About This Project</h2>
+      <p class="about-description">
+        This project was developed and deployed by <strong class="about-author">Sumanth</strong>, showcasing the latest advancements in Clean Energy Innovations.
+      </p>
+    </div>
+  </section>
+</main>

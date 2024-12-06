@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+/* styles.css or styles.scss */
+.success-snackbar {
+    background-color: #4CAF50;
+    color: #fff;
+  }
+  
+  .error-snackbar {
+    background-color: #F44336;
+    color: #fff;
+  }
+  
+  .info-snackbar {
+    background-color: #2196F3;
+    color: #fff;
+  }
+  
+  .warning-snackbar {
+    background-color: #FF9800;
+    color: #fff;
+  }
+  html, body { height: 100%; }
+  body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+  
+  
+
+.toast-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+  background-color: #0080ff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Hide after 5 seconds */
+  animation: hideToast 5s forwards;
+}
+
+@keyframes hideToast {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+  

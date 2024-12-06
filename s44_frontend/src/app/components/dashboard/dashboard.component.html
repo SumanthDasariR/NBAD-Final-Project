@@ -1,0 +1,10 @@
+<div class="dashboard-container" role="main">
+<h2>Dashboard</h2>
+<div *ngIf="loading" class="loading">Loading...</div>
+<p *ngIf="error" class="error" role="alert">{{ error }}</p>
+<div class="content-container" *ngIf="data">
+    <div *ngFor="let content of data.contents" class="content-wrapper">
+    <div class="content-section" [innerHTML]="renderContent(content)"></div>
+    </div>
+</div>
+</div>

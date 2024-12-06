@@ -1,0 +1,18 @@
+<div *ngIf="loading">Loading...</div>
+<p *ngIf="error" style="color: red;" role="alert">{{ error }}</p>
+<div *ngIf="!loading && !error" class="summary-container" role="main">
+  <h2>Summary</h2>
+  <div *ngFor="let item of items" class="item-container">
+    <div *ngIf="item.type === 'content'" [innerHTML]="renderContent(item)"></div>
+    <div *ngIf="item.type === 'chart'" class="chart-container">
+      <canvas *ngIf="chartConfigs[item.data.id]" baseChart
+              [data]="chartConfigs[item.data.id].data"
+              [type]="chartConfigs[item.data.id].type"
+              [options]="chartConfigs[item.data.id].options">
+      </canvas>
+      <p *ngIf="chartConfigs[item.data.id]?.options?.plugins?.subtitle?.text" class="chart-caption">
+        {{ chartConfigs[item.data.id]?.options?.plugins?.subtitle?.text }}
+      </p>
+    </div>
+  </div>
+</div>

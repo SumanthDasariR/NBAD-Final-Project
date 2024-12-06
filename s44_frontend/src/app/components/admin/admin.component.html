@@ -1,0 +1,104 @@
+<div class="admin-container" role="main">
+    <h2>Content Management</h2>
+    <form (ngSubmit)="handleSubmitContent()" aria-label="Content Management Form">
+      <div class="form-group">
+        <label for="pageType">Page Type:</label>
+        <select id="pageType" [(ngModel)]="pageType" name="pageType" aria-label="Select Page Type">
+          <option *ngFor="let type of pageTypes" [value]="type">{{ type }}</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="orderId">Order ID:</label>
+        <input type="number" id="orderId" [(ngModel)]="orderId" name="orderId" min="1" required aria-label="Order ID" />
+      </div>
+  
+      <div class="form-group">
+        <label for="contentEditor">Content:</label>
+        <div class="NgxEditor__Wrapper">
+          <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
+          <ngx-editor [editor]="editor" [(ngModel)]="editorState" name="editorState"  [disabled]="false" ></ngx-editor>
+        </div>
+      </div>
+  
+      <button type="submit" class="submit-button" [attr.aria-label]="editMode === 'content' ? 'Update Content' : 'Add Content'">
+        {{ editMode === 'content' ? 'Update' : 'Add' }} Content
+      </button>
+      <button *ngIf="editMode === 'content'" type="button" (click)="resetForm()" class="cancel-button" aria-label="Cancel Edit">
+        Cancel
+      </button>
+    </form>
+  
+    <form *ngIf="pageType !== 'dashboard'" (ngSubmit)="handleSubmitChart()" aria-label="Chart Management Form">
+      <div class="form-group">
+        <label for="chartType">Chart Type:</label>
+        <select id="chartType" [(ngModel)]="chartType" name="chartType" (change)="handleChartTypeChange($event)" aria-label="Select Chart Type">
+          <option *ngFor="let type of chartTypes" [value]="type">{{ type }}</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="chartData">Chart Data (JSON):</label>
+        <textarea id="chartData" [(ngModel)]="chartData" name="chartData" rows="10" required aria-label="Chart Data"></textarea>
+      </div>
+  
+      <button type="submit" class="submit-button" [attr.aria-label]="editMode === 'chart' ? 'Update Chart' : 'Add Chart'">
+        {{ editMode === 'chart' ? 'Update' : 'Add' }} Chart
+      </button>
+      <button *ngIf="editMode === 'chart'" type="button" (click)="resetForm()" class="cancel-button" aria-label="Cancel Edit">
+        Cancel
+      </button>
+    </form>
+  
+    <div class="data-tables">
+      <h3>Existing Content</h3>
+      <table role="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Page Type</th>
+            <th scope="col">Order ID</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of contents">
+            <td>{{ item._id }}</td>
+            <td>{{ item.page_type }}</td>
+            <td>{{ item.order_id }}</td>
+            <td>
+              <button (click)="handleEditContent(item)" [attr.aria-label]="'Edit content ' + item._id">Edit</button>
+              <button (click)="handleDelete(item._id, 'content')" [attr.aria-label]="'Delete content ' + item._id">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <div *ngIf="pageType !== 'dashboard'">
+        <h3>Existing Charts</h3>
+        <table role="table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Page Type</th>
+              <th scope="col">Chart Type</th>
+              <th scope="col">Order ID</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of charts">
+              <td>{{ item._id }}</td>
+              <td>{{ item.page_type }}</td>
+              <td>{{ item.chart_type }}</td>
+              <td>{{ item.order_id }}</td>
+              <td>
+                <button (click)="handleEditChart(item)" [attr.aria-label]="'Edit chart ' + item._id">Edit</button>
+                <button (click)="handleDelete(item._id, 'chart')" [attr.aria-label]="'Delete chart ' + item._id">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,71 @@
+.summary-container {
+    padding: 4rem 2rem;
+    max-width: 80vw;
+    margin: 0 auto;
+  }
+  
+  .item-container {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: white;
+    text-align: justify !important;
+  }
+  
+  .chart-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    max-width: 45vw;
+  }
+  
+  .axis-label {
+    font-size: 12px;
+    fill: #666;
+  }
+  
+  .chart-title {
+    font-size: 16px;
+    font-weight: bold;
+    fill: #333;
+  }
+  
+  .grid line {
+    stroke: #e0e0e0;
+    stroke-opacity: 0.7;
+  }
+  
+  .line {
+    fill: none;
+    stroke-width: 2;
+    transition: stroke-width 0.2s;
+  }
+  
+  .line:hover {
+    stroke-width: 3;
+  }
+  
+  .bar:hover {
+    opacity: 0.8;
+  }
+  
+  .arc path {
+    transition: opacity 0.3s, stroke-width 0.3s;
+  }
+  
+  .arc text {
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .legend text {
+    fill: #666;
+  }
+  
+  .chart-caption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 0.5rem;
+  }

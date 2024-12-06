@@ -1,0 +1,55 @@
+<nav class="navbar" aria-label="Main Navigation">
+  <div class="navbar-container">
+    <p class="navbar-brand">
+      <span>S44-CleanEnergy</span>
+    </p>
+    <ul class="navbar-list">
+      <li class="navbar-item">
+        <a 
+          routerLink="/dashboard" 
+          (click)="routeToDashboard()"
+          routerLinkActive="active" 
+          class="navbar-link" 
+          (mouseenter)="onHover('dashboard')"
+          (mouseleave)="onHover('dashboard')"
+          [@linkAnimation]="getLinkState('dashboard')"
+        >
+          <i class="fas fa-tachometer-alt"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="navbar-item">
+        <a 
+          routerLink="/summary" 
+          (click)="routeToSummary()"
+          routerLinkActive="active" 
+          class="navbar-link" 
+          (mouseenter)="onHover('summary')"
+          (mouseleave)="onHover('summary')"
+          [@linkAnimation]="getLinkState('summary')"
+        >
+          <i class="fas fa-chart-bar"></i>
+          <span>Summary</span>
+        </a>
+      </li>
+      <li class="navbar-item">
+        <a 
+          routerLink="/reports" 
+          (click)="routeToReports()"
+          routerLinkActive="active" 
+          class="navbar-link" 
+          (mouseenter)="onHover('reports')"
+          (mouseleave)="onHover('reports')"
+          [@linkAnimation]="getLinkState('reports')"
+        >
+          <i class="fas fa-file-alt"></i>
+          <span>Reports</span>
+        </a>
+      </li>
+    </ul>
+    <button (click)="handleLogout()" class="navbar-button" [@buttonAnimation]>
+      <i class="fas fa-sign-out-alt"></i>
+      <span>Logout</span>
+    </button>
+  </div>
+</nav>

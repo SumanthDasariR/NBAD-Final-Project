@@ -1,0 +1,145 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #4CAF50;
+  --secondary-color: #2196F3;
+  --text-color: #333333;
+  --background-color: #F5F5F5;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.main {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #4CAF50, #2196F3);
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 0 1rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  max-width: 40rem;
+  margin-bottom: 2rem;
+}
+
+.hero button {
+  background-color: white;
+  color: #2196F3;
+  transition: background-color 0.3s;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.hero button:hover {
+  background-color: #e0f7fa;
+}
+
+.hero .icon {
+  height: 1rem;
+  width: 1rem;
+  margin-left: 0.5rem;
+}
+
+.hero .flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px !important;
+}
+
+.hero .flex .icon {
+  height: 3rem;
+  width: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.about {
+  background-color: white;
+  color: #333333;
+  padding: 4rem 1rem;
+}
+
+.about .container {
+  max-width: 64rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.about p {
+  font-size: 1.25rem;
+}
+
+.about strong {
+  color: #4CAF50;
+}
+
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 3.75rem;
+  }
+
+  .hero p {
+    font-size: 1.5rem;
+  }
+
+  .about h2 {
+    font-size: 2.5rem;
+  }
+}
+
+
+.hero-image-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.login-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+

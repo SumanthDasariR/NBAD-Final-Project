@@ -1,0 +1,39 @@
+<div class="login-page" [@fadeIn]>
+  <div class="login-container" [@slideIn]>
+    <h2 class="login-title">Welcome Back</h2>
+    <form (ngSubmit)="handleSubmit()" class="login-form" aria-label="Login Form">
+      <div class="form-group" [@inputAnimation]>
+        <label for="username">Username</label>
+        <input 
+          type="text" 
+          id="username" 
+          [(ngModel)]="username" 
+          name="username"
+          required 
+          aria-required="true"
+          aria-label="Username"
+          placeholder="Enter your username"
+        />
+      </div>
+      <div class="form-group" [@inputAnimation]>
+        <label for="password">Password</label>
+        <input 
+          type="password" 
+          id="password" 
+          [(ngModel)]="password" 
+          name="password"
+          required 
+          aria-required="true"
+          aria-label="Password"
+          placeholder="Enter your password"
+        />
+      </div>
+      <button type="submit" class="login-button" aria-label="Login" [@buttonAnimation]>
+        <span>Login</span>
+        <i class="fas fa-arrow-right"></i>
+      </button>
+    </form>
+    <p *ngIf="error" class="error-message" role="alert" [@errorAnimation]>{{ error }}</p>
+  </div>
+</div>
+
